@@ -5,11 +5,12 @@ import kt.connect.core.Connect;
 import kt.connect.core.Msg;
 
 public class ConnectNetty implements Connect {
-
+    private final int id;
     private final Channel channel;
 
-    public ConnectNetty(Channel conn) {
-        this.channel = conn;
+    public ConnectNetty(int id, Channel channel) {
+        this.id = id;
+        this.channel = channel;
     }
 
     public void writeMsg(Msg msg) {
